@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CarVault – Explore · Compare · Drive Your Dream</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home-buttons.css">
+</head>
+<body>
+<script src="js/image-data.js"></script>
+<header>
+  <div class="logo">
+    <img class="logoimg" src="images/logos/logo-001.jpg" alt="CarVault logo" width="916" height="564">
+    <div><b>Car<span>Vault</span></b><small>Explore · Compare · Drive Your Dream</small></div>
+  </div>
+  <nav><a class="on" href="?" data-nav id="navHome">Home</a><a href="?page=companies" id="navExplore">Explore Cars</a><a href="?page=brands" id="navBrandsLink">Brands</a><a href="?page=about" id="navAbout">About</a></nav>
+</header>
+
+<div class="hero">
+  <div class="scene"><div class="hslides" id="heroSlides" aria-hidden="true"></div></div>
+  <div class="hc">
+    <div class="eyebrow">WELCOME TO CARVAULT</div>
+    <h1>Your Next Ride<br><span>Awaits</span></h1>
+    <p class="sub">Explore cars from every brand, find the perfect one, and get all the details you need — in one place.</p>
+    <div class="search" id="searchBox">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.500-4.500"/></svg>
+      <input type="text" placeholder="Search by brand, model or car type...">
+      <button class="btn">Search &nbsp;→</button>
+    </div>
+    <div class="chips">
+      <a class="chip" data-dd="company"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg><span class="lbl">Company</span><i class="car">▾</i></a>
+      <a class="chip" data-dd="brand"><svg viewBox="0 0 24 24"><path d="M3 15l2-6h14l2 6v4H3zM3 15h18M7 19v1M17 19v1"/></svg><span class="lbl">Brand</span><i class="car">▾</i></a>
+      <a class="chip" data-dd="category"><svg viewBox="0 0 24 24"><path d="M2 16c0-3 2-4 5-4l3-3h6l3 3c3 0 3 2 3 4v2H2z"/><circle cx="7" cy="18" r="1.500"/><circle cx="17" cy="18" r="1.500"/></svg><span class="lbl">Car Category</span><i class="car">▾</i></a>
+      <a class="chip" data-dd="powertrain"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg><span class="lbl">Powertrain</span><i class="car">▾</i></a>
+      <span class="chipgrp"><a class="chip" data-dd="year"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span class="lbl">Year</span><i class="car">▾</i></a>
+      <a class="chip" data-dd="country"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><span class="lbl">Country / Origin</span></a></span>
+    </div>
+  </div>
+</div>
+
+<section id="explore" hidden>
+  <div class="crumbs" id="crumbs"></div>
+  <div class="xhead"><h2 id="xtitle"></h2><span class="xcount" id="xcount"></span><button class="xclear xback" id="xback" type="button">← Back</button><button class="xclear" id="xclear" type="button">✕ Clear</button></div>
+  <div id="xextra"></div>
+  <div class="cargrid" id="cargrid"></div>
+</section>
+
+<button type="button" id="cvGBack" class="gback" aria-label="Go back" hidden>← Back</button>
+<section id="pages" hidden></section>
+
+<div class="modal" id="carModal" hidden>
+  <div class="mbox" role="dialog" aria-modal="true">
+    <button class="mx" id="mClose" type="button" aria-label="Close">×</button>
+    <div id="mBody"></div>
+  </div>
+</div>
+
+<section id="brands">
+  <div class="brands">
+    <div class="bl">
+      <div class="kick">POPULAR BRANDS</div>
+      <h2>Top Car Brands</h2>
+      <p>Explore the most trusted and loved car brands from around the world.</p>
+      <a class="ghost" href="#brands" id="toggleBrands">View All Brands &nbsp;→</a>
+    </div>
+    <div class="tiles collapsed" id="brandTiles">
+      <div class="tile"><div class="lg"><img src="images/logos/logo-002.png" alt="TOYOTA logo"></div><span>TOYOTA</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-003.png" alt="HONDA logo"></div><span style="font-family:Georgia,serif">HONDA</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-004.png" alt="NISSAN logo"></div><span>NISSAN</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-005.png" alt="BMW logo"></div><span>BMW</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-006.png" alt="Mercedes-Benz logo"></div><span style="font-family:Georgia,serif;font-weight:400">Mercedes-Benz</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-007.png" alt="AUDI logo"></div><span>AUDI</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-008.png" alt="PORSCHE logo"></div><span>PORSCHE</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-009.png" alt="Volkswagen logo"></div><span>Volkswagen</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-010.png" alt="Ferrari logo"></div><span style="font-style:italic">Ferrari</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-011.png" alt="Lamborghini logo"></div><span>Lamborghini</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-012.png" alt="Maserati logo"></div><span>Maserati</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-013.png" alt="Ford logo"></div><span style="font-style:italic;font-family:Georgia,serif;color:#8fb4ff">Ford</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-014.png" alt="Chevrolet logo"></div><span>Chevrolet</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-015.png" alt="TESLA logo"></div><span style="letter-spacing:.15em">TESLA</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-016.png" alt="JEEP logo"></div><span>JEEP</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-017.png" alt="Cadillac logo"></div><span>Cadillac</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-018.png" alt="HYUNDAI logo"></div><span>HYUNDAI</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-019.png" alt="KIA logo"></div><span>KIA</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-020.png" alt="Genesis logo"></div><span>Genesis</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-021.png" alt="VOLVO logo"></div><span>VOLVO</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-022.png" alt="Bentley logo"></div><span style="font-family:Georgia,serif;font-weight:400">Bentley</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-023.png" alt="Rolls-Royce logo"></div><span style="font-family:Georgia,serif;font-weight:400">Rolls-Royce</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-024.png" alt="Aston Martin logo"></div><span>Aston Martin</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-025.png" alt="McLaren logo"></div><span>McLaren</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-026.png" alt="Land Rover logo"></div><span style="font-family:Georgia,serif;font-weight:400">Land Rover</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-027.png" alt="Tata logo"></div><span>Tata</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-028.png" alt="Mahindra logo"></div><span>Mahindra</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-029.png" alt="BYD logo"></div><span>BYD</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-030.png" alt="Bugatti logo"></div><span>Bugatti</span></div>
+      <div class="tile"><div class="lg"><img src="images/logos/logo-031.png" alt="Lexus logo"></div><span>Lexus</span></div>
+    </div>
+  </div>
+</section>
+
+<script src="js/toggle-brands.js"></script>
+<script src="js/brand-dropdown.js"></script>
+<script src="js/app.js"></script>
+<script src="js/hero.js"></script>
+</body>
+</html>

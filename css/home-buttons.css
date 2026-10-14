@@ -1,0 +1,24 @@
+/* ===== CarVault: refined home-page buttons (palette unchanged: blue / cyan / violet) ===== */
+
+/* Search button */
+.search .btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:40px;padding:15px 30px;font-size:16px;font-weight:700;letter-spacing:.2px;color:#fff;background:linear-gradient(135deg,#0a84ff 0%,#1ea0ff 55%,#1ed0ff 100%);box-shadow:0 8px 22px rgba(10,132,255,.45),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .25s ease,box-shadow .25s ease,filter .25s ease}
+.search .btn::before{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .65s ease;z-index:-1;pointer-events:none}
+.search .btn:hover{background:linear-gradient(135deg,#0a84ff 0%,#1ea0ff 55%,#1ed0ff 100%);transform:translateY(-2px);filter:brightness(1.07);box-shadow:0 12px 28px rgba(10,132,255,.6),inset 0 1px 0 rgba(255,255,255,.4)}
+.search .btn:hover::before{left:130%}
+.search .btn:active{transform:translateY(0) scale(.97);box-shadow:0 5px 14px rgba(10,132,255,.5)}
+.search .btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+/* Filter chips: Company, Brand, Car Category, Powertrain, Year, Country / Origin */
+.chip{color:#eaf2ff;border-color:#2a4a84;background:linear-gradient(180deg,rgba(15,32,66,.78),rgba(6,16,36,.82));box-shadow:0 3px 12px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.07);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease,color .25s ease;-webkit-user-select:none;user-select:none}
+.chip svg{transition:transform .25s ease,filter .25s ease}
+.chip:hover{border-color:var(--cyan);color:var(--cyan);background:linear-gradient(180deg,rgba(18,48,98,.88),rgba(8,24,54,.92));transform:translateY(-3px);box-shadow:0 10px 24px rgba(10,132,255,.38),0 0 0 1px rgba(30,208,255,.28),inset 0 1px 0 rgba(255,255,255,.12)}
+.chip:hover svg{transform:scale(1.12);filter:drop-shadow(0 0 6px rgba(30,208,255,.75))}
+.chip.open,.chip.picked{border-color:var(--cyan);color:#fff;background:linear-gradient(135deg,rgba(10,132,255,.45),rgba(106,92,255,.34));box-shadow:0 8px 22px rgba(10,132,255,.42),inset 0 1px 0 rgba(255,255,255,.2)}
+.chip:active{transform:translateY(-1px) scale(.98)}
+
+/* View All Brands */
+#toggleBrands{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:6px;border:1.5px solid transparent;border-radius:40px;padding:14px 30px;font-size:15px;font-weight:700;letter-spacing:.2px;color:#fff;background:linear-gradient(#071326,#071326) padding-box,linear-gradient(135deg,var(--blue),var(--cyan) 55%,var(--violet)) border-box;box-shadow:0 0 18px rgba(10,132,255,.28);transition:transform .25s ease,box-shadow .25s ease,color .25s ease}
+#toggleBrands:hover{color:#fff;background:linear-gradient(135deg,#0a84ff,#6a5cff) padding-box,linear-gradient(135deg,var(--blue),var(--cyan) 55%,var(--violet)) border-box;transform:translateY(-2px);box-shadow:0 12px 26px rgba(10,132,255,.5)}
+#toggleBrands:active{transform:translateY(0) scale(.97)}
+
+@media(prefers-reduced-motion:reduce){.search .btn,.search .btn::before,.chip,.chip svg,#toggleBrands{transition:none}.search .btn:hover::before{left:-70%}}
